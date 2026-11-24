@@ -28,6 +28,7 @@
   "packageManager": "npm@11.13.0",
   "dependencies": {
     "@capacitor/core": "8.6.2",
-    "@capawesome/capacitor-electron": "0.2.2"
+    "@capawesome/capacitor-electron": "file:vendor/capawesome-capacitor-electron-0.2.2-monorepo-fix.tgz",
+    "@capawesome/capacitor-live-update": "8.8.1"
   }
 }

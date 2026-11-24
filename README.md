@@ -19,7 +19,7 @@ apps/my-app/
 npm install
 cd apps/my-app
 npx cap add @capawesome/capacitor-electron    # works
-npx cap sync @capawesome/capacitor-electron   # fails on `main`
+npx cap sync @capawesome/capacitor-electron   # fails on `main`, works on `fix`
 ```
 
 ## Result on `main` (`@capawesome/capacitor-electron` 0.2.2)
@@ -30,6 +30,17 @@ npx cap sync @capawesome/capacitor-electron   # fails on `main`
 ```
 
 The plugin manifest step reads `package.json` and `node_modules` only from the Capacitor root (`apps/my-app`), not from the workspace root.
+
+## Result on `fix` (patched build)
+
+This branch installs `@capawesome/capacitor-electron` from `vendor/capawesome-capacitor-electron-0.2.2-monorepo-fix.tgz`, built (`npm run build && npm pack`) from the fix in [CrackerakiUA/capacitor-electron@f85c487](https://github.com/CrackerakiUA/capacitor-electron/commit/f85c487). The fork can't be installed from git directly, because `dist/` isn't committed and `prepare` doesn't build it.
+
+`@capawesome/capacitor-live-update` is added as an example plugin with an Electron implementation, installed at the workspace root:
+
+```
+[capacitor-electron] Copied web assets to <repo>/apps/my-app/electron/app.
+[capacitor-electron] Found 1 plugin(s) with an electron implementation.
+```
 
 ## Note: `capacitor:*` scripts in the root `package.json`
 
