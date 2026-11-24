@@ -1,0 +1,33 @@
+{
+  "name": "capacitor-electron-nx-sample",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "capacitor:add": "node ./dist/cli/index.js add",
+    "capacitor:copy": "node ./dist/cli/index.js copy",
+    "capacitor:update": "node ./dist/cli/index.js update",
+    "capacitor:open": "node ./dist/cli/index.js open",
+    "capacitor:run": "node ./dist/cli/index.js run"
+  },
+  "private": true,
+  "devDependencies": {
+    "@capacitor/cli": "8.6.2",
+    "@nx/js": "24.0.0",
+    "@swc-node/register": "1.11.1",
+    "@swc/core": "1.15.8",
+    "@swc/helpers": "0.5.18",
+    "@types/node": "^24.0.0",
+    "nx": "24.0.0",
+    "prettier": "^3.8.1",
+    "tslib": "^2.3.0",
+    "typescript": "~6.0.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "npm@11.13.0",
+  "dependencies": {
+    "@capacitor/core": "8.6.2",
+    "@capawesome/capacitor-electron": "0.2.2"
+  }
+}
